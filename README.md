@@ -1,5 +1,5 @@
 # cs2-pdxmods2wine
-Small utility to fix the paths and names of the assets inside a mod
+Small utility to fix the paths and names of the assets inside all the mods directory
 
 When you download a mod from PDX Mods the file structure would look like this:
 
@@ -13,5 +13,5 @@ cture would look like this:
 
 ## How to run
 ``` python
-python pdx2wine.py <path/to/directory/of/mod>
+python pdx2wine.py <path/to/mods/directory>
 ```

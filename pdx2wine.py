@@ -20,6 +20,12 @@ def organize_files(base_dir):
                 
                 print(f"Moving '{src_path}' to '{dst_path}'")
                 shutil.move(src_path, dst_path)
+def process_directories(base_dir):
+    # Walk through the top-level subdirectories
+    for entry in os.scandir(base_dir):
+        if entry.is_dir():
+            print(f"Processing directory: {entry.path}")
+            organize_files(entry.path)
 
 def main():
     if len(sys.argv) != 2:
@@ -31,7 +37,7 @@ def main():
         print(f"Error: '{base_dir}' is not a directory.")
         sys.exit(1)
 
-    organize_files(base_dir)
+    process_directories(base_dir)
 
 if __name__ == "__main__":
     main()
